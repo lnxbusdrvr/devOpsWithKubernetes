@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pingpong-dep
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: pingpong-dep
+  template:
+    metadata:
+      labels:
+        app: pingpong-dep
+    spec:
+      containers:
+      - image: pingpong-app:1.2
+        name: pingpong-app
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: PORT
+            value: "3000"
