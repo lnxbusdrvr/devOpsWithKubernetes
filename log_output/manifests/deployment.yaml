@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hashgenerator-dep
+  name: logapp-dep
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hashgenerator-dep
+      app: logapp-dep
   template:
     metadata:
       labels:
-        app: hashgenerator-dep
+        app: logapp-dep
     spec:
       containers:
       - image: omahash:latest
