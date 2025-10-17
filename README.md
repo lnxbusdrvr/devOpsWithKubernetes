@@ -12,4 +12,4 @@
 - [1.6.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.6/the_project)
 - [1.7.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.7/log_output)
 - [1.8.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.8/the_project)
-- [1.8.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.9/ping-pong)
+- [1.9.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.9/ping-pong)
