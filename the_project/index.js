@@ -1,12 +1,13 @@
-const http = require('http');
+const express = require('express');
+
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello from todo app!\n');
+app.get('/', (req, res) => {
+  res.send('<h1>Hello World of Kubernetes</h1>')
 });
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server started in port ${PORT}`);
 });
 
