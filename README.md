@@ -15,3 +15,5 @@
 - [1.9.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.9/ping-pong)
 - [1.10.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.10/log_output_split)
 - [1.11.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.11/ping_pong_log)
+- [1.12.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.12/the_project_image)
+- [1.13.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.13/todo_input)
