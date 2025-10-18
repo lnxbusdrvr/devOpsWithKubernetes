@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: page-w-image-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: page-w-image
+  template:
+    metadata:
+      labels:
+        app: page-w-image
+    spec:
+      volumes:
+        - name: shared-logs
+          persistentVolumeClaim:
+            claimName: page-w-image-claim
+      containers:
+      - name: page_output
+        image: page_output:1.12
+        volumeMounts:
+          - name: shared-logs
+            mountPath: /usr/src/app/shared
+      - name: dl_n_save
+        image: dl_n_save:1.12
+        volumeMounts:
+          - name: shared-logs
+            mountPath: /usr/src/app/shared

@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: page-w-image-ingress
+spec:
+  rules:
+  - host: image.localhost
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: page-w-image-svc
+            port:
+              number: 80
