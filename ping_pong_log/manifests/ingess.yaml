@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: log-pingpong-ingress
+spec:
+  rules:
+  - host: log-pingpong.localhost
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: log-pingpong-svc
+            port:
+              number: 80
