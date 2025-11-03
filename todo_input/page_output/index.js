@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs');
+const axios = require('axios');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
@@ -7,15 +7,18 @@ const path = require('path');
 
 const imageFile = path.join(__dirname, 'current.jpg'); 
 
+const TODO_BACKEND_URL = process.env.TODO_BACKEND_URL
+  || 'http://todo-backend-svc:3001';
 
-const todos = [
-  "Learn Javascript",
-  "Learn React",
-  "Build a project",
-  "Learn Kubernetes"
-];
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  let todos = [];
+  try {
+    const response = await axios.get(`${TODO_BACKEND_URL}/todos`)
+    todos = Array.isArray(response.data) ? response.data : [];
+  } catch (error) {
+    console.error("Failed to fetch todos:", error.message);
+  }
   const todoList = todos.map(todo => `<li>${todo}</li>`).join('');
   res.send(`
     <!DOCTYPE html>
@@ -40,7 +43,7 @@ app.get('/', (req, res) => {
         <div>
           <ul>
             ${todoList}
-</ul>
+          </ul>
         </div>
 
         <div>DevOps with Kubernetes 2025</div>
@@ -49,21 +52,24 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.post('/todos', (req, res) => {
+app.post('/todos', async (req, res) => {
    const newTodo = req.body.content?.trim();
 
-  if (!newTodo) {
+  if (!newTodo)
     return res.redirect('/');
-  }
 
-  todos.push(newTodo);
-
+  try {
+    await axios.post(`${TODO_BACKEND_URL}/todos`, { content: newTodo });
+  } catch (error) {
+    console.error("Failed to post todo:", error.message);
+  }
   res.redirect('/');
 });
 
 app.get('/image', (req, res) => {
   res.sendFile(imageFile);
 });
+
 
 app.listen(PORT, () => {
   console.log(`Log input output server running on port ${PORT}`);

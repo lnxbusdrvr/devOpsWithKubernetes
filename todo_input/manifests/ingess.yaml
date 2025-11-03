@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: page-w-image-ingress
+  name: todo-backend-ingress
 spec:
   rules:
-  - host: image.localhost
+  - host: todo-backend.localhost
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: page-w-image-svc
+            name: todo-backend-svc
             port:
               number: 80
