@@ -17,3 +17,8 @@
 - [1.11.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.11/ping_pong_log)
 - [1.12.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.12/the_project_image)
 - [1.13.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/1.13/todo_input)
+
+### Chapter 3
+
+- [2.1.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/2.1/connecting_pods)
+- [2.2.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/2.2/the_project)
