@@ -21,4 +21,4 @@
 ### Chapter 3
 
 - [2.1.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/2.1/connecting_pods)
-- [2.2.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/2.2/the_project)
+- [2.2.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/2.2/todo_input)
