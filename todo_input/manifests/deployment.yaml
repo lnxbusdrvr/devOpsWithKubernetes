@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: exercises
   name: page-w-image-dep
 spec:
   replicas: 1
@@ -18,7 +19,7 @@ spec:
             claimName: page-w-image-claim
       containers:
         - name: page-output
-          image: page_output:2.2
+          image: page_output:2.3
           env:
             - name: TODO_BACKEND_URL
               value: "http://todo-backend-svc:3001"
@@ -27,7 +28,7 @@ spec:
               mountPath: /usr/src/app/shared
 
         - name: dl-n-save
-          image: dl_n_save:2.2
+          image: dl_n_save:2.3
           volumeMounts:
             - name: shared-logs
               mountPath: /usr/src/app/shared
