@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: exercises
   name: logoutput-dep
 spec:
   replicas: 1
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
         - name: log-output
-          image: log-output:2.1
+          image: log-output:2.3
           ports:
             - containerPort: 3000
 

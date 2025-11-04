@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: exercises
   name: pingpong-dep
 spec:
   replicas: 1
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pingpong
-          image: pingpong:2.1
+          image: pingpong:2.3
           ports:
             - containerPort: 3001
 
