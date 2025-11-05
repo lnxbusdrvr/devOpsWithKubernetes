@@ -1,0 +1,10 @@
+# manifests/logoutput-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: project
+  name: logoutput-config
+data:
+  information.txt: |
+    this text is from file
+  MESSAGE: hello world

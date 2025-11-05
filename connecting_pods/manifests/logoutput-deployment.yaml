@@ -1,3 +1,4 @@
+# manifests/logoutput-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +16,21 @@ spec:
     spec:
       containers:
         - name: log-output
-          image: log-output:2.4
+          image: log-output:2.5
           ports:
             - containerPort: 3000
+          env:
+            - name: MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: logoutput-config
+                  key: MESSAGE
+          volumeMounts:
+            - name: logoutput-config-volume
+              mountPath: /usr/src/app/config
+              readOnly: true
+      volumes:
+        - name: logoutput-config-volume
+          configMap:
+            name: logoutput-config
 

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pingpong
-          image: pingpong:2.4
+          image: pingpong:2.5
           ports:
             - containerPort: 3001
 
