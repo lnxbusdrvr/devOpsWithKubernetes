@@ -25,3 +25,4 @@
 - [2.3.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/2.3/todo_input)
 - [2.4.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/2.4/connecting_pods)
 - [2.5.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/2.5/connecting_pods)
+- [2.6.](https://www.github.com/lnxbusdrvr/devOpsWithKubernetes/tree/2.6/connecting_pods)
